@@ -15,6 +15,6 @@ User Login
 
 3. Akun Operator Mahasiswa
 - username : opmahasiswa
-- password : 123456
+- password : 1234567
 
   link akses : localhost/full-crudphp
