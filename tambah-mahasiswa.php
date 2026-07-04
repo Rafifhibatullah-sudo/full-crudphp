@@ -113,6 +113,7 @@ if (isset($_POST['tambah'])) {
                         </div>
 
                         <button type="submit" name="tambah" class="btn btn-primary" style="float: right;">Tambah</button>
+                        <a href="mahasiswa.php" class="btn btn-danger">Cancel</a>
                     </form>
                 </div>
             </div>

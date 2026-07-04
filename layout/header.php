@@ -98,7 +98,7 @@ include 'config/app.php';
           </li>
 
            <li class="nav-item">
-            <a href="crud-modal.php" class="nav-link">
+            <a href="akun.php" class="nav-link">
               <i class="nav-icon fas fa-user-cog"></i>
               <p>
                 Data akun

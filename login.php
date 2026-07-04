@@ -4,7 +4,6 @@ session_start();
 
 include 'config/app.php';
 global $db;
-
 // check apakah tmbol login ditekan
 if (isset($_POST['login'])) {
     // ambil input username dan password
@@ -64,7 +63,7 @@ if (isset($_POST['login'])) {
         <div class="login-logo">
             <div class="text-center">
                 <img class="mb-4" src="assets-template/img/bootstrap-logo.svg" alt="" width="72" height="57">
-                <a href="#"><b>Admin</b>LTE</a>
+                <a href="#"></a>
             </div>
         </div>
         <!-- /.login-logo -->
@@ -111,8 +110,7 @@ if (isset($_POST['login'])) {
 
                 <hr>
                 <p class="mb-1 text-center">
-                    <span class="mt-5 mb-3 text-muted">Developer &copy;
-                        <a href="https://mubatekno.com">Muba Teknologi</a> <?= date('Y') ?>
+                       <p class=" text-center text-muted"> Copyright&copy; RAFIF <?= date('Y') ?></p>
                     </span>
                 </p>
             </div>

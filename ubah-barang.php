@@ -75,7 +75,7 @@ if (isset($_POST['ubah'])) {
 
          <td width="15%" class="text-center">
         <button type="ubah" name="ubah" class="btn btn-primary mb-2" style="float: right;">Ubah</button>
-        <a href="index.php" class="btn btn-danger mb-2" style="float: right;">Cancel</a>
+        <a href="index.php" class="btn btn-danger">Cancel</a>
          </td>
     </form>
         </div>

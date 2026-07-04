@@ -16,11 +16,11 @@ $id_akun = (int)$_GET['id_akun'];
 if (delete_akun($id_akun) > 0) {
     echo "<script>
             alert('data akun berhasil di hapus');
-            document.location.href = 'crud-modal.php';
+            document.location.href = 'akun.php';
             </script>";
 } else {
     echo "<script>
             alert('data akun gagal di hapus');
-            document.location.href = 'crud-modal.php';
+            document.location.href = 'akun.php';
           </script>";
 }

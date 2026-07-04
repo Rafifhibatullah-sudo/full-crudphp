@@ -82,7 +82,7 @@ $data_mahasiswa = select("SELECT * FROM mahasiswa ORDER BY id_mahasiswa DESC");
                                     <td><?= $mahasiswa['prodi']; ?></td>
                                     <td><?= $mahasiswa['jk']; ?></td>
                                     <td><?= $mahasiswa['telepon']; ?></td>
-                                    <td class="text-center" width="20%">
+                                    <td class="text-center" width="25%">
                                         <a href="detail-mahasiswa.php?id_mahasiswa=<?= $mahasiswa['id_mahasiswa']; ?>" class="btn btn-secondary btn-sm"><i class="fas fa-eye"></i> Detail</a>
 
                                         <a href="ubah-mahasiswa.php?id_mahasiswa=<?= $mahasiswa['id_mahasiswa']; ?>" class="btn btn-success btn-sm"><i class="fas fa-edit"></i> Ubah</a>
