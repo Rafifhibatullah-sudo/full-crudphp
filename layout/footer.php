@@ -1,26 +1,21 @@
-
-
-
-
 <!-- /.content-wrapper -->
-  <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.2.0
-    </div>
-  </footer>
+<footer class="main-footer">
+  <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+  All rights reserved.
+  <div class="float-right d-none d-sm-inline-block">
+    <b>Version</b> 3.2.0
+  </div>
+</footer>
 
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
-  <!-- /.control-sidebar -->
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
+  <!-- Control sidebar content goes here -->
+</aside>
+<!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
 
-<!-- jQuery -->
-<script src="assets-template/plugins/jquery/jquery.min.js"></script>
+
 <!-- jQuery UI 1.11.4 -->
 <script src="assets-template/plugins/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -61,19 +56,47 @@
 <script src="assets-template/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
 <!--load ck editorn cdn -->
 <script src="https://cdn.ckeditor.com/4.19.0/full/ckeditor.js"></script>
+
 <script>
-    CKEDITOR.replace('alamat', {
-        filebrowserBrowseUrl: 'assets/ckfinder/ckfinder.html',
-        filebrowserUploadUrl: 'assets/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
-        height: '400px'
-    });
+  CKEDITOR.replace('alamat', {
+    filebrowserBrowseUrl: 'assets/ckfinder/ckfinder.html',
+    filebrowserUploadUrl: 'assets/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+    height: '400px'
+  });
 </script>
 
-
+<!-- data table client side -->
 <script>
-  $(function () {
+  $(function() {
     $('#example2').DataTable();
   });
 </script>
+
+<!-- data table server side -->
+
+
+<script>
+$(document).ready(function () {
+    $('#serverside').DataTable({
+        processing: true,
+        serverSide: true,
+        ajax: {
+          "url": "mahasiswa-serverside.php?action=table_data",
+          "dataType": "json",
+          "type": "POST"
+        },
+        columns: [
+          {"data": "no"},
+          {"data": "nama"},
+          {"data": "prodi"},
+          {"data": "jk"},
+          {"data": "telepon"},
+          {"data": "aksi"},
+        ]
+        
+    });
+});
+</script>
 </body>
+
 </html>

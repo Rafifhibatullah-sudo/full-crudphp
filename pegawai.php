@@ -20,12 +20,9 @@ if ($_SESSION["level"] != 1 and $_SESSION["level"] != 3) {
     exit;
 }
 
-$title = 'Daftar Mahasiswa';
+$title = 'Daftar pegawai';
 
 include 'layout/header.php';
-
-// menampilkan data mahasiswa
-$data_mahasiswa = select("SELECT * FROM mahasiswa ORDER BY id_mahasiswa DESC");
 
 ?>
 
@@ -36,11 +33,11 @@ $data_mahasiswa = select("SELECT * FROM mahasiswa ORDER BY id_mahasiswa DESC");
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0"><i class="fas fa-users"></i> Data Mahasiswa</h1>
+                    <h1 class="m-0"><i class="fas fa-users"></i> Data pegawai</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item active">Data Mahasiswa</li>
+                        <li class="breadcrumb-item active">Data pegawai</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -55,26 +52,27 @@ $data_mahasiswa = select("SELECT * FROM mahasiswa ORDER BY id_mahasiswa DESC");
             <!-- Main content -->
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Tabel Data Mahasiswa</h3>
+                    <h3 class="card-title">Tabel Data pegawai</h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                    <a href="tambah-mahasiswa.php" class="btn btn-primary btn-sm mb-2"><i class="fas fa-plus"></i> Tambah</a>
+                 
 
-                    <table id="serverside" class="table table-bordered table-hover">
+                    <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
                                 <th>No</th>
                                 <th>Nama</th>
-                                <th>Prodi</th>
-                                <th>Jenis Kelamin</th>
+                                <th>jabatan</th>
+                                <th>email</th>
                                 <th>Telepon</th>
-                                <th>Aksi</th>
+                                <th>alamat</th>
                             </tr>
                         </thead>
 
-                        <tbody>
-                           
+                        <tbody id="live_data">
+
+
                         </tbody>
                     </table>
                 </div>
@@ -83,5 +81,24 @@ $data_mahasiswa = select("SELECT * FROM mahasiswa ORDER BY id_mahasiswa DESC");
     </section>
     <!-- /.content -->
 </div>
+
+<script>
+    $('document').ready(function(){
+        setInterval( function() {
+            getPegawai()
+        }, 200) // request per-2 detik
+    });
+
+    function getPegawai()
+    {
+        $.ajax({
+            url: "realtime-pegawai.php",
+            type: "get",
+            success: function(response) {
+                $('#live_data').html(response) 
+            }
+        });
+    }
+</script>
 
 <?php include 'layout/footer.php'; ?>
